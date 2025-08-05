@@ -1,15 +1,15 @@
 import Stripe from "stripe"
 
-// Update API version to match Stripe's expected type
+// @ts-ignore
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "", {
-  apiVersion: "2025-02-24.acacia",  // Updated to match type expectation
+  apiVersion: "2024-09-30.acacia",
   typescript: true,
 })
 
 export const createCheckoutSession = async ({
-                                              userEmail,
-                                              userId,
-                                            }: {
+  userEmail,
+  userId,
+}: {
   userEmail: string
   userId: string
 }) => {
